@@ -1,0 +1,24 @@
+package com.example.demo.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.Repository.UserCredentialRepository;
+import com.example.demo.model.UserCredential;
+
+@Service
+public class AuthService {
+
+	@Autowired
+	private UserCredentialRepository repository;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
+	public String saveuser(UserCredential credential) {
+		repository.save(credential);
+		return "user added successfully";
+	
+	
+}
+}
